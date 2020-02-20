@@ -12,17 +12,21 @@ with open('business.json') as f:
         data_business.append(json.loads(line))
 
 
-def getData(filename): 
-    for i in data_photo: 
-        if i['photo_id'] == filename: 
-            for j in data_business: 
-                if i['business_id'] == j['business_id']:
-                    #print(j)
-                    return j
 
-directory = os.fsencode("./yelp_photos/photos")
 
-for file in os.listdir(directory):
-    filename = os.fsdecode(file)
-    file_id, trash = filename.split(".")
-    getData(file_id)
+def getData(filename):
+    for j in data_business:
+        if i['business_id'] == j['business_id']:
+            return j
+                    
+                    
+for i in data_photo:
+    getData(i["photo_id"])
+    
+#directory = os.fsencode("./yelp_photos/photos")
+
+#for file in os.listdir(directory):
+    #filename = os.fsdecode(file)
+    #file_id, trash = filename.split(".")
+    
+    #getData(file_id)
